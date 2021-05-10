@@ -1,0 +1,77 @@
+alias g="git"
+
+alias l="ls -al --color"
+
+alias pacman="sudo pacman"
+alias psag="ps aux | ag"
+
+# override default commands with favorites
+alias top="htop"
+alias mux="tmuxinator"
+alias tw="timew :id :annotations"
+
+alias sc="systemctl"
+alias scu="systemctl --user"
+alias jc="journalctl"
+alias jcu="journalctl --user"
+
+
+alias imvdir="find . -type f -exec file --mime-type {} \+ | awk -F: '{if ($2 \~/image\//) print $1}' | imv"
+
+# others
+alias network-restart="systemctl restart  netctl-auto@wlp0s20f3.service"
+alias fgal='/usr/bin/fgallery  -d -i "$@"'
+
+alias hpgain="amixer -c 0 cset 'numid=10' 1 numid=10,iface=MIXER,name='Headphone Mic Boost Volume' ; type=INTEGER,access=rw---R--,values=2,min=0,max=3,step=0 : values=1,1"
+alias microphone-test="arecord -vvv -f dat /dev/null"
+
+# sway alias
+alias startsway="sway -d 2> ~/.sway.log"
+
+# rdp
+alias rdp_hanzo="rdesktop 98.119.130.13 -u 'socalip\outsideopen' -p H@nz0d3vt3@m$"
+alias rdp_oo-toolset="rdesktop oo-toolset-2012.campus.westmont.edu -u 'CAMPUS\tvanderwalt' -p Geuknaugbo -g 1920x1024"
+
+alias tmux='TERM=screen-256color tmux'
+alias mux='TERM=screen-256color tmuxinator'
+
+# emacs aliases
+alias emacs-start="/usr/bin/emacs --daemon"
+alias emacs-stop="emacsclient --eval \"(progn (setq kill-emacs-hook 'nil) (kill-emacs))\""
+alias em="emacsclient -n -c $@"
+alias emnw="emacsclient -t -nw $@"
+
+
+if [ -n "$NVIM_LISTEN_ADDRESS" ]; then alias nvim='echo "No nesting!"'; fi
+alias nvimmuch='nvim -c NotMuch -c "set nonumber"'
+
+# # pair programming environment
+# alias pair_start="systemctl start tmux@dev.service"
+# alias pair_stop="systemctl stop tmux@dev.service"
+
+# # set my keyboard layouts
+alias kb-dvorak="setxkbmap -layout custom\(dvp-custom\) -option ctrl:swapcaps"
+# alias kb-qwerty="setxkbmap -layout us -option crl:swapcaps"
+# alias kb-swapcaps='setxkbmap -option "ctrl:swapcaps"'
+
+alias start-gnome="XDG_SESSION_TYPE=wayland dbus-run-session gnome-session"
+# alias gnome-control-center="XDG_CURRENT_DESKTOP=GNOME gnome-control-center"
+
+# # systemctl --user
+# alias systemctl-user="systemctl --user"
+# alias journalctl-user="journalctl --user"
+
+# # shortcut to show failed units
+# alias systemctl-failed="systemctl list-units --state=failed"
+# alias systemctl-user-failed="systemctl --user list-units --state=failed"
+
+# # mount shortcuts
+# alias mount_db="sshfs tvanderwalt@db.westmont.edu:/home/tvanderwalt ~/mnt/tvanderwalt@db.westmont.edu"
+# alias mount_odroid="sshfs -o follow_symlinks -o transform_symlinks odroid:/home/tjaart ~/mnt/tjaart@odroid"
+# alias mount_android="sshfs tjaart@192.168.1.180: /home/tjaart/mnt/android -o IdentityFile=/home/tjaart/.ssh/id_rsa -o port=2222"
+# alias mount_nuc="sshfs tjaart@home.tjaart.org:/mnt/data /home/tjaart/mnt/data -o IdentityFile=/home/tjaart/.ssh/id_rsa"
+
+# load all keys
+alias kc="keychain --eval --systemd --agents ssh,gpg $(ls -1 ~/.ssh | ag id_ | grep -v \.pub$ | tr '\n' ' ')"
+
+#alias gitlab-le-www="gitlab-le --production --email tjaart@tjaart.co.za --domain tjaart.org www.tjaart.org --repository https://gitlab.com/tjaart/tjaart.gitlab.io --token h6AMJkQhzhrFGRZr2tZj"
