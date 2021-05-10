@@ -8,6 +8,7 @@ setopt HIST_REDUCE_BLANKS
 setopt INC_APPEND_HISTORY_TIME
 setopt EXTENDED_HISTORY
 
+ZPLUG_LOADFILE=$HOME/.zsh/packages.zsh
 source /usr/share/zsh/scripts/zplug/init.zsh
 
 eval $(keychain --eval --quiet --systemd --agents gpg,ssh $(ls ~/.ssh | ag id_ | grep -v \.pub$ | sed "s@\(.*\)@$HOME/.ssh/\1@" | tr '\n' ' '))
