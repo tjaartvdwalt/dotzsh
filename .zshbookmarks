@@ -13,3 +13,5 @@ hash -d digital-hydrant-collectors="/home/tjaart/Code/work/outside_open/digital-
 hash -d hyperswitch="/home/tjaart/Code/work/sd/hyperswitch"
 hash -d outsideopen.github.io="/home/tjaart/Code/work/outside_open/outsideopen.github.io"
 hash -d kilo-laserfiche="/home/tjaart/Code/work/cpsa/kilo-laserfiche"
+hash -d vestaboard-api="/home/tjaart/Code/work/outside_open/vestaboard-api"
+hash -d shellcasts="/home/tjaart/Code/personal/shellcasts"

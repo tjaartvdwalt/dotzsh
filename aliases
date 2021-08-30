@@ -10,11 +10,12 @@ alias top="htop"
 alias mux="tmuxinator"
 alias tw="timew :id :annotations"
 
-alias sc="systemctl"
-alias scu="systemctl --user"
-alias jc="journalctl"
-alias jcu="journalctl --user"
+# alias sctl="systemctl"
+alias systemctl-user="systemctl --user"
+# alias jctl="journalctl"
+alias journalctl-user="journalctl --user"
 
+alias slack="slack --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=WebRTCPipeWireCapturer"
 
 alias imvdir="find . -type f -exec file --mime-type {} \+ | awk -F: '{if ($2 \~/image\//) print $1}' | imv"
 
@@ -70,6 +71,7 @@ alias start-gnome="XDG_SESSION_TYPE=wayland dbus-run-session gnome-session"
 # alias mount_odroid="sshfs -o follow_symlinks -o transform_symlinks odroid:/home/tjaart ~/mnt/tjaart@odroid"
 # alias mount_android="sshfs tjaart@192.168.1.180: /home/tjaart/mnt/android -o IdentityFile=/home/tjaart/.ssh/id_rsa -o port=2222"
 # alias mount_nuc="sshfs tjaart@home.tjaart.org:/mnt/data /home/tjaart/mnt/data -o IdentityFile=/home/tjaart/.ssh/id_rsa"
+alias mount_nas="sshfs nas.tjaart.org:/mnt/tank/tjaart /home/tjaart/mnt/nas -o IdentityFile=/home/tjaart/.ssh/id_rsa"
 
 # load all keys
 alias kc="keychain --eval --systemd --agents ssh,gpg $(ls -1 ~/.ssh | ag id_ | grep -v \.pub$ | tr '\n' ' ')"

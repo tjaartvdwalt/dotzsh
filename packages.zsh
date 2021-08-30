@@ -43,6 +43,8 @@ MODE_CURSOR_VICMD="block"
 MODE_CURSOR_SEARCH="steady underline"
 zplug "softmoth/zsh-vim-mode"
 
+zplug "plugins/yarn", from:oh-my-zsh
+
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 if ! zplug check --verbose; then
